@@ -20,7 +20,20 @@ class Grade:
         for subject in ['국어', '영어', '수학'] :
             student.addMarks(int(input(subject + '점수 입력 : ')))
         avg = student.avg()
-        print(f'{student.name}의 과목 평균은 {int(avg)}이다.')
+
+        if avg >= 90:
+            grade = 'A'
+        elif avg >=80:
+            grade = 'B'
+        elif avg >=70:
+            grade = 'C'
+        elif avg >=60:
+            grade = 'D'
+        elif avg >=50:
+            grade = 'E'
+        else:
+            grade = 'F'
+        print(f'{student.name}의 과목 평균은 {int(avg)}이며, 학점은 {grade}이다.')
 
 if __name__ == '__main__':
     Grade.main()
